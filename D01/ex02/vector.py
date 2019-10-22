@@ -25,16 +25,38 @@ class Vector:
         res = []
         for i in range (self.lenght):
             res.append(self.values[i] + val[i])
+        return Vector(res)
+
 
     #__radd__
     # add : scalars and vectors, can have errors with vectors.
-    #__sub__
+    def __sub__(self, other):
+        val = other.values
+        res = []
+        for i in range (self.lenght):
+            res.append(self.values[i] - val[i])
+        return Vector(res)
+
     #__rsub__
     # sub : scalars and vectors, can have errors with vectors.
-    #__div__
+
+    def __div__(self, other):
+        val = other.values
+        res = []
+        for i in range (self.lenght):
+            res.append(self.values[i] / val[i])
+        return Vector(res)
+
+
     #__rdiv__
     # div : only scalars.
-    #__mul__
+
+    def __mul__(self, other):
+        val = other.values
+        res = []
+        for i in range (self.lenght):
+            res.append(self.values[i] * val[i])
+        return Vector(res)
     #__rmul__
     # mul : scalars and vectors, can have errors with vectors,
     # return a scalar is we perform Vector * Vector (dot product)
@@ -50,9 +72,17 @@ class Vector:
 if __name__ == "__main__":
     v1 = Vector([0.0, 1.0, 2.0, 3.0]) 
     print(str(v1))
-    v2 = v1 + 5
+    v2 = v1 + v1
     print(str(v2))
     v3 = Vector(3)
     print(str(v3))
     v4 = Vector((10, 15))
     print(str(v4))
+    v5 = v2 - v1
+    print(str(v5))
+    v6 = v2 * v1
+    print(str(v6))
+    v7 = Vector((5, 9))
+    print(str(v7))
+    v8 = v7 / v4
+    print(str(v8))
