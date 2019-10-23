@@ -1,6 +1,6 @@
 class Account(object):
     ID_COUNT = 1
-    value = 0
+    value = 0 #
     def __init__(self, name, **kwargs):
         self.id = self.ID_COUNT
         self.name = name
@@ -30,9 +30,11 @@ class Bank(object):
             @return         True is success, False is an error occured
         """
         if origin == Account and dest == Account and type(amount) is int or float and amount > 0:
-            if origin.value > amount :
+            if origin.value > amount and (dest.value + amount) > 0 :
                 origin.value -= amount
                 dest.value += amount
+                return True
+        return Fasle
     def fix_account(self, account):
         """
             fix the corrupted account
