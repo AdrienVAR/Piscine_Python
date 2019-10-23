@@ -6,7 +6,7 @@ def what_are_the_vars(*args, **kwargs):
     for key, values in kwargs.items():
             if getattr(obj, key, False) != False: #in object, is there the key? if no name found, return False.
                 return None                       #if a name is found (!= False), return None
-            print("Key =" + key)
+            #print("Key =" + key)
             setattr(res, key, values)
         #print (key, values)
     #getattr(res, args)
@@ -20,10 +20,8 @@ class ObjectC(object):
     #a = 10
     #hello = World
 
-
     def __init__(self):
         pass
-
 
 def doom_printer(obj):
     if obj is None:

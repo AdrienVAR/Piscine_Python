@@ -1,18 +1,29 @@
 import time
 from random import randint
+
+import functools
+
+def check_authorization(f):
+    def wrapper(*args):
+        #print (args[0].water_level)
+        return f(*args)
+    return wrapper
+
 class CoffeeMachine():
     water_level = 100
-    @log
+
+    @check_authorization
     def start_machine(self):
-     if self.water_level > 20:
-         return True
-     else:
-         print("Please add water!")
-         return False
-    @log
+        if self.water_level > 20:
+            return True
+        else:
+            print("Please add water!")
+            return False
+    @check_authorization
     def boil_water(self):
         return "boiling..."
-    @log
+
+    @check_authorization
     def make_coffee(self):
         if self.start_machine():
             for _ in range(20):
@@ -20,7 +31,7 @@ class CoffeeMachine():
                 self.water_level -= 1
             print(self.boil_water())
             print("Coffee is ready!")
-    @log
+    @check_authorization
     def add_water(self, water_level):
         time.sleep(randint(1, 5))
         self.water_level += water_level
