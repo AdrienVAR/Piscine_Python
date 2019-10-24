@@ -13,3 +13,6 @@ export PATH="$/goinfre/advardon/miniconda/bin:$PATH"
 #yes | ./inst.sh
 #echo -ne "\n" | "yes\n"
 
+conda install numpy -b
+conda install matplotlib -b
+conda install pandas -b
