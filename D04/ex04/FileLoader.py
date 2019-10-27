@@ -8,6 +8,3 @@ class FileLoader:
         print("Loading dataset of dimensions", dimension[0] , "x", dimension[1])
         return data
 
-
-
- 

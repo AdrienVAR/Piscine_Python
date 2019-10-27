@@ -23,8 +23,8 @@ def proportionBySport(df, olymp_year, sport, gender):
  
     print('Number of Rows in dataframe : ' , numOfRows)
     print('Number of fem : ' , numOfWomen)
+    #print (data)
     #print (res)
-    #print (div)
     #print((res/div)/100)
     print(numOfRows/numOfWomen)
 
