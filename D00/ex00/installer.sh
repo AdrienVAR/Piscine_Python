@@ -19,4 +19,4 @@ conda install -y pandas
 conda install -y scikit-learn
 conda install -y scipy
 conda install -y seaborn
-#conda install jupyter
+conda install -y jupyter
